@@ -1,0 +1,40 @@
+# == Class: barbican
+#
+
+class barbican
+{
+  $source = 'https://github.com/openstack/barbican.git'
+  $devstack_dir = '/home/stack/devstack'
+  $barbican_dir = '/home/stack/barbican'
+  $user = $user::stack::username
+  $branch = 'master'
+
+  exec { 'barbican_clone':
+    require => [
+      File['/usr/local/bin/git_clone.sh'],
+      Exec['devstack_clone'],
+    ],
+    path => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:.',
+    environment => "HOME=/home/$user",
+    user => 'stack',
+    group => 'stack',
+    command => "/usr/local/bin/git_clone.sh ${source} ${branch} ${barbican_dir}",
+    logoutput => true,
+    timeout => 1200,
+  }
+
+  #exec { 'run_barbican.sh':
+  #  require => [
+  #      Exec['swift_clone'],
+  #  ],
+  ##  path => '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:.',
+  #  user => 'stack',
+  #  environment => "HOME=/home/$user",
+  #  group => 'stack',
+  #  command => "bash -c '/opt/stack/swift/swift/usr/run_barbican.sh",
+  #  logoutput => true,
+  #  timeout => 1200, 
+  #  returns => 2, 
+  #}
+
+}
