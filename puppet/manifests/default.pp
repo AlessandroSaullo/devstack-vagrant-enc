@@ -5,5 +5,4 @@ node default {
   include grenade
   include devstack
   include swift
-  include barbican
 }

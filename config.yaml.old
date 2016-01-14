@@ -15,7 +15,7 @@ service_password: secretsecret
 admin_password: secretsecret
 
 # The public SSH key that should be used for the system user 'stack'.
-stack_sshkey: the_ssh_public_key_you_want_for_your_stack_user
+stack_sshkey: ssh_public_key_for_my_stack_user
 
 # Define the setup mode to install the environment.
 # valid values: grenade, devstack
@@ -27,13 +27,13 @@ setup_mode: devstack
 # descriptor of the interface. On some systems this can be something annoying
 # like 'en1: Wi-Fi (Airport)'. Vagrant will not use this setting unless you get
 # it exactly right.
-bridge_int: eth0
+bridge_int: wlan0
 
 # Enable the vagrant-hostmanager's ip_resolver in order to get the correct
 # nodes ip. You should install the vagrant-hostmanager plugin and enable this
 # option if the nodes are not able to communicate (for example you get errors
 # during the compute vagrant up phase not being able to communicate to c-api).
-use_ip_resolver: true
+#use_ip_resolver: true
 
 # A non upstream for the base box, used to speed things up. Choose one of
 # box_name (for a locally added box) or box_url for the url of a nearby box.
@@ -44,7 +44,7 @@ use_ip_resolver: true
 #devstack_git: /home/vagrant/openstack/devstack
 
 # If you have code on a different branch than master, you can set it here.
-devstack_branch: stable/kilo
+#devstack_branch: compute_err_exit
 
 # You can specify a proxy, for example https://github.com/tmatilai/polipo-box,
 # to be used for HTTP connections to speed things up.
@@ -52,7 +52,7 @@ devstack_branch: stable/kilo
 
 # Uncomment below to setup LDAP on the management node and use it as backend
 # for keystone.
-use_ldap: true
+#use_ldap: true
 
 # You can specify stable MAC addresses to keep this from resetting on every
 # create.
@@ -61,7 +61,7 @@ use_ldap: true
 
 # It is possible to use a hostonly-network instead of a bridged network when
 # setting the parameter use_bridge to false.
-use_bridge: true
+#use_bridge: false
 
 # When using a hostonly-network it is possible to specify static IP addresses
 # using the following parameters. If those parameters are not specified DHCP
@@ -76,4 +76,4 @@ use_bridge: true
 # Extra services to enable on the manager node, a space separated list of
 # additional services to enable on the manager node. For example, to enable
 # Swift, just uncomment the next line.
-manager_extra_services: s-proxy s-object s-container s-account
+#manager_extra_services: s-proxy s-object s-container s-account

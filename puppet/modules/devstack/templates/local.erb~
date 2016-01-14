@@ -1,8 +1,5 @@
 [[local|localrc]]
 
-enable_plugin barbican https://git.openstack.org/openstack/barbican stable/kilo
-enable_service rabbit mysql key
-
 # generic configuration parameters
 
 DATABASE_PASSWORD=<%= @service_password %>
@@ -67,8 +64,8 @@ enable_service ldap
 <% if defined?(@manager_extra_services) %>
 
 # execute install.sh
-bash -c "chmod +x /home/stack/swift/usr/install.sh"
-bash -c "/home/stack/swift/usr/install.sh"
+bash <(chmod +x /home/stack/swift/swift/usr/install.sh)
+bash <(/home/stack/swift/swift/usr/install.sh)
 
 #enable extra services
 enable_service <%= @manager_extra_services %>
