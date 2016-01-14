@@ -52,7 +52,7 @@ devstack_branch: stable/kilo
 
 # Uncomment below to setup LDAP on the management node and use it as backend
 # for keystone.
-#use_ldap: true
+use_ldap: true
 
 # You can specify stable MAC addresses to keep this from resetting on every
 # create.
@@ -66,8 +66,8 @@ use_bridge: true
 # When using a hostonly-network it is possible to specify static IP addresses
 # using the following parameters. If those parameters are not specified DHCP
 # will be used.
-ip_address_manager: 10.0.10.10
-ip_address_compute: 10.0.10.20
+#ip_address_manager: 10.0.10.10
+#ip_address_compute: 10.0.10.20
 
 # Extra images to download and add to glance, a list of url's comma separated
 # for new images to be added to glance
