@@ -1,0 +1,19 @@
+#!/bin/sh
+# DevStack extras script to install SEL-Deamon
+
+if is_service_enabled sel-deamon; then
+    if [[ "$1" == "source" ]]; then
+        # Initial source
+        source $TOP_DIR/lib/sel-deamon
+	elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
+        echo_summary "Configuring SEL-Deamon"
+        configure_sel-deamon
+    elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
+        echo_summary "Initializing SEL-Deamon"
+        start_sel-deamon
+    fi
+
+    if [[ "$1" == "unstack" ]]; then
+        stop_sel-deamon
+    fi
+fi
