@@ -26,7 +26,7 @@ TEMPEST_SERVICES+=,sel-daemon
 
 # configure_sel-daemon - Set config files, create data dirs, etc
 function configure_sel-daemon {
-    setup_develop $SEL_DEAMON_DIR
+    setup_develop $SEL_DAEMON_DIR
 }
 
 # start_sel-daemon - Start running processes, including screen

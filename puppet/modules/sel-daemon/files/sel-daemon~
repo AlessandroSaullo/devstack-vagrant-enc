@@ -19,7 +19,7 @@ XTRACE=$(set +o | grep xtrace)
 set +o xtrace
 
 # Set up default directories
-SEL_DEAMON_DIR=$DEST/sel-daemon
+SEL_DAEMON_DIR=$DEST/sel-daemon
 
 # Tell Tempest this project is present
 TEMPEST_SERVICES+=,sel-daemon
@@ -31,7 +31,7 @@ function configure_sel-daemon {
 
 # start_sel-daemon - Start running processes, including screen
 function start_sel-daemon {
-    screen_it sel-daemon "uwsgi --master --emperor "
+    screen_it sel-daemon "uwsgi --master --emperor $SEL_DAEMON_DIR/config"
 }
 
 # stop_sel-daemon - Stop running processes
