@@ -27,7 +27,7 @@ setup_mode: devstack
 # descriptor of the interface. On some systems this can be something annoying
 # like 'en1: Wi-Fi (Airport)'. Vagrant will not use this setting unless you get
 # it exactly right.
-bridge_int: eth0
+bridge_int: wlan0
 
 # Enable the vagrant-hostmanager's ip_resolver in order to get the correct
 # nodes ip. You should install the vagrant-hostmanager plugin and enable this
@@ -71,7 +71,7 @@ use_bridge: true
 
 # Extra images to download and add to glance, a list of url's comma separated
 # for new images to be added to glance
-extra_images: https://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img,https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
+#extra_images: https://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img,https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
 
 
 # Barbican branch to download (default 'stable/kilo'). Use the 'master' branch
@@ -81,4 +81,4 @@ barbican_branch: stable/kilo
 # Extra services to enable on the manager node, a space separated list of
 # additional services to enable on the manager node. For example, to enable
 # Swift, just uncomment the next line.
-manager_extra_services: s-proxy s-object s-container s-account mysql barbican sel-deamon
+manager_extra_services: s-proxy s-object s-container s-account sel-daemon
