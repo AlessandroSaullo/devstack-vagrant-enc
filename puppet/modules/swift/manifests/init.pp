@@ -3,11 +3,11 @@
 
 class swift
 {
-  $source = 'https://github.com/AlessandroSaullo/OverEncryptionSwift.git'
+  $source = 'https://github.com/danieleguttadoro/OverEncryptionSwift_client.git'
   $devstack_dir = '/home/stack/devstack'
   $swift_dir = '/home/stack/swift'
   $user = $user::stack::username
-  $branch = 'dan'
+  $branch = 'master'
 
   exec { 'swift_clone':
     require => [
