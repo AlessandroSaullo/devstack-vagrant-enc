@@ -11,7 +11,7 @@ if is_service_enabled sel-daemon; then
 	#elif [[ "$1" == "stack" && "$2" == "post-config" ]]; then
     #    echo_summary "Configuring SEL-Daemon"
     #    configure_sel-daemon
-    elif [[ "$1" == "stack" && "$2" == "extra" ]]; then
+    elif [[ "$1" == "stack" && "$2" == "post-extra" ]]; then
         echo_summary "Initializing SEL-Daemon"
         start_sel-daemon
     fi
