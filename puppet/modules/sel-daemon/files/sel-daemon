@@ -36,6 +36,7 @@ TEMPEST_SERVICES+=,sel-daemon
 
 # start_sel-daemon - Start running processes, including screen
 function start_sel-daemon {
+    sudo rm -r -fd /usr/local/lib/python2.7/dist-packages/Crypto/
     pip_install 'Flask'
     screen_it sel-daemon "python $SEL_DAEMON_DIR/daemon.py"
     # "uwsgi --master --emperor --enable-threads $SEL_DAEMON_DIR/config/daemon.ini"
