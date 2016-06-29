@@ -31,12 +31,13 @@ TEMPEST_SERVICES+=,sel-daemon
 
 # install_sel-daemon - Collect source and prepare
 #function install_sel-daemon {
-#	pip_install 'uwsgi'
+#	
 #}
 
 # start_sel-daemon - Start running processes, including screen
 function start_sel-daemon {
     sudo rm -r -fd /usr/local/lib/python2.7/dist-packages/Crypto/
+    pip_install 'ecdsa'
     pip_install 'Flask'
     python $SEL_DAEMON_DIR/init.py
     screen_it sel-daemon "python $SEL_DAEMON_DIR/daemon.py"
