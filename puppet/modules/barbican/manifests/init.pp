@@ -35,17 +35,17 @@ class barbican
     timeout => 1200,
   }
 
-  file { "$devstack_dir/lib/barbican":
-    ensure => present,
-    source  => "$barbican_dir/contrib/devstack/lib/barbican",
-    require => Exec['barbican_clone'],
-  }
+  #file { "$devstack_dir/lib/barbican":
+  #  ensure => present,
+  #  source  => "$barbican_dir/contrib/devstack/lib/barbican",
+  #  require => Exec['barbican_clone'],
+  #}
 
-  file { "$devstack_dir/extras.d/70-barbican.sh":
-    ensure => present,
-    source  => "$barbican_dir/contrib/devstack/extras.d/70-barbican.sh",
-    require => Exec['barbican_clone'],
-  }
+  #file { "$devstack_dir/extras.d/70-barbican.sh":
+  #  ensure => present,
+  #  source  => "$barbican_dir/contrib/devstack/extras.d/70-barbican.sh",
+  #  require => Exec['barbican_clone'],
+  #}
 
   file { "/etc/profile.d/Z99-barbican.sh":
     ensure => present,

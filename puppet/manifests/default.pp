@@ -6,5 +6,5 @@ node default {
   include devstack
   include swift
   #include barbican
-  include sel-daemon
+  #include sel-daemon
 }
