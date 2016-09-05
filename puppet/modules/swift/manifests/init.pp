@@ -7,7 +7,7 @@ class swift
   $devstack_dir = '/home/stack/devstack'
   $swift_dir = '/home/stack/swift'
   $user = $user::stack::username
-  $branch = 'master'
+  $branch = 'barbican'
 
   exec { 'swift_clone':
     require => [
