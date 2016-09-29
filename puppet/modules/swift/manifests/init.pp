@@ -3,11 +3,11 @@
 
 class swift
 {
-  $source = 'https://github.com/danieleguttadoro/ovencswiftserver_onthefly.git'
+  $source = 'https://github.com/escudocloud/encswift_server.git'
   $devstack_dir = '/home/stack/devstack'
   $swift_dir = '/home/stack/swift'
   $user = $user::stack::username
-  $branch = 'barbican'
+  $branch = 'master'
 
   exec { 'swift_clone':
     require => [
