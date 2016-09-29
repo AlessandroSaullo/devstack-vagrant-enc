@@ -12,6 +12,10 @@ MULTI_HOST="True"
 API_RATE_LIMIT="False"
 RECLONE="True"
 
+IDENTITY_API_VERSION=<%= @api_version %>
+
+enable_plugin barbican https://git.openstack.org/openstack/barbican stable/mitaka
+
 # database configuration parameters
 
 DATABASE_TYPE=mysql

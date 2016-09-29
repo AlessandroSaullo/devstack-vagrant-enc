@@ -3,7 +3,7 @@
 
 class swift
 {
-  $source = 'https://github.com/danieleguttadoro/OverEncryptionSwift_client.git'
+  $source = 'https://github.com/escudocloud/encswift_server.git'
   $devstack_dir = '/home/stack/devstack'
   $swift_dir = '/home/stack/swift'
   $user = $user::stack::username

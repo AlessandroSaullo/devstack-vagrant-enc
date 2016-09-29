@@ -14,6 +14,8 @@ service_password: secretsecret
 # The password that should be used for the OpenStack admin user.
 admin_password: secretsecret
 
+api_version: 3
+
 # The public SSH key that should be used for the system user 'stack'.
 stack_sshkey: the_ssh_public_key_you_want_for_your_stack_user
 
@@ -42,9 +44,7 @@ use_ip_resolver: true
 
 # Non upstream Git URL to fetch Devstack from instead.
 #devstack_git: /home/vagrant/openstack/devstack
-
-# If you have code on a different branch than master, you can set it here.
-devstack_branch: stable/kilo
+devstack_branch: stable/mitaka
 
 # You can specify a proxy, for example https://github.com/tmatilai/polipo-box,
 # to be used for HTTP connections to speed things up.
@@ -72,6 +72,10 @@ use_bridge: true
 # Extra images to download and add to glance, a list of url's comma separated
 # for new images to be added to glance
 #extra_images: https://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img,https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
+
+# Barbican branch to download (default 'stable/kilo'). Use the 'master' branch
+# at your own risk.
+barbican_branch: stable/mitaka
 
 # Extra services to enable on the manager node, a space separated list of
 # additional services to enable on the manager node. For example, to enable
